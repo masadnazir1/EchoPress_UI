@@ -5,7 +5,7 @@ import styles from "../Styles/NewsSlider.module.css";
 import Image from "next/image";
 import SliderService from "../services/SliderService";
 
-const BASE_URL = "http://localhost:5000"; // Change if your backend runs elsewhere
+const BASE_URL = "https://apiblog.galaxydev.pk"; // Change if your backend runs elsewhere
 
 export default function NewsSlider() {
   const [slides, setSlides] = useState([]);
