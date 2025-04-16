@@ -1,0 +1,90 @@
+.slider {
+  position: relative;
+  width: 100%;
+
+  margin: auto;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.sliderTrack {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 250px;
+  position: relative;
+}
+
+.image {
+  border-radius: 1rem;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  color: #fff;
+}
+
+.category {
+  background-color: #3b82f6;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.3rem;
+  color: #e5e7eb;
+}
+
+.verified {
+  font-size: 0.8rem;
+  color: #3b82f6;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 0.2rem;
+}
+
+.dots {
+  text-align: center;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: #cbd5e1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #3b82f6;
+}
+
+@media (max-width: 468px) {
+  .slide {
+    height: 200px;
+  }
+}

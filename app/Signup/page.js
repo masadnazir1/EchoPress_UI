@@ -1,27 +1,27 @@
-"use client"
+"use client";
 
-import { useState } from 'react';
-import Image from 'next/image';
-import styles from './Signup.module.css'; // Adjust the path to your CSS module
-import authService from '@/services/authService';
+import { useState } from "react";
+import Image from "next/image";
+import styles from "./Signup.module.css"; // Adjust the path to your CSS module
+import authService from "@/app/services/authService";
 import GoogleLogo from "../assets/GLogo.webp";
 
 const Signup = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
   const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setError(''); // Clear previous errors
+    setError(""); // Clear previous errors
 
     try {
       const data = await authService.registerUser(name, email, password);
       // Handle successful registration (e.g., show success message or redirect)
-      console.log('Registration successful:', data);
+      console.log("Registration successful:", data);
       // Redirect after successful registration (using next/router or window.location)
       // Router.push('/login');
     } catch (err) {
@@ -68,8 +68,12 @@ const Signup = () => {
             />
           </div>
           {error && <p className={styles.errorMessage}>{error}</p>}
-          <button type="submit" className={styles.registerButton} disabled={loading}>
-            {loading ? 'Registering...' : 'Register'}
+          <button
+            type="submit"
+            className={styles.registerButton}
+            disabled={loading}
+          >
+            {loading ? "Registering..." : "Register"}
           </button>
         </form>
         <div className={styles.divider}>or</div>
