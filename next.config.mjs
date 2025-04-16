@@ -8,6 +8,11 @@ const nextConfig = {
         port: "5000",
         pathname: "/uploads/Sliders/**",
       },
+      {
+        protocol: "https",
+        hostname: "apiblog.galaxydev.pk",
+        pathname: "/uploads/Sliders/**",
+      },
     ],
   },
 };

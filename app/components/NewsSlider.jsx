@@ -14,6 +14,8 @@ export default function NewsSlider() {
 
   const delay = 5000;
 
+  console.log("Hello Slides" + slides);
+
   const resetTimeout = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
   };
