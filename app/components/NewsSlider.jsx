@@ -49,6 +49,12 @@ export default function NewsSlider() {
 
   return (
     <div className={styles.slider}>
+      <div className={styles.sliderHeader}>
+        <h4 className={styles.Breakingh4}>Breaking News</h4>
+        <button>See All</button>
+        <div className={styles.sliderHeaderLine}></div>
+      </div>
+
       <div
         className={styles.sliderTrack}
         style={{ transform: `translateX(-${current * 100}%)` }}

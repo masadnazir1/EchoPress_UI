@@ -4,7 +4,7 @@
 
   margin: auto;
   overflow: hidden;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
 }
 
 .sliderTrack {
@@ -19,7 +19,7 @@
 }
 
 .image {
-  border-radius: 1rem;
+  border-radius: 0px;
 }
 
 .overlay {
@@ -83,6 +83,25 @@
   background-color: #3b82f6;
 }
 
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+.sliderHeader h4 {
+  width: 50%;
+  text-align: left;
+}
+.sliderHeader button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  color: #3b82f6;
+  width: 50%;
+  text-align: right;
+}
 @media (max-width: 468px) {
   .slide {
     height: 200px;
