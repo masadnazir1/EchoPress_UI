@@ -13,7 +13,7 @@
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
-  background-color: #fff;
+  background: #f7f7f7;
   &&:hover {
     background-color: #ccc;
     cursor: pointer;

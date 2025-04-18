@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import BottomTabs from "./BottomTabs";
 
-const excludedRoutes = ["/login", "/signup", "/settings", "/"];
+const excludedRoutes = ["/Login", "/Signup", "/settings", "/"];
 
 export default function BottomTabsWrapper() {
   const pathname = usePathname();
