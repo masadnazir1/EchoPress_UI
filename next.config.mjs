@@ -13,6 +13,11 @@ const nextConfig = {
         hostname: "apiblog.galaxydev.pk",
         pathname: "/uploads/Sliders/**",
       },
+      {
+        protocol: "https",
+        hostname: "apiblog.galaxydev.pk",
+        pathname: "/uploads/article/**",
+      },
     ],
   },
 };

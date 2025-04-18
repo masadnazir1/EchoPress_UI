@@ -1,0 +1,35 @@
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.sliderWrapper {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideSkeleton {
+  height: 140px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #eee, #ddd, #eee);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+  .slideSkeleton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+  }
+}

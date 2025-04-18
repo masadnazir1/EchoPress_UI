@@ -4,39 +4,48 @@ import { useEffect, useState, useRef } from "react";
 import styles from "../Styles/NewsSlider.module.css";
 import Image from "next/image";
 import SliderService from "../services/SliderService";
+import ImageSliderSkeleton from "../Skeletons/ImageSliderSkeleton";
 
-const BASE_URL = "https://apiblog.galaxydev.pk"; // Change if your backend runs elsewhere
+const BASE_URL = "https://apiblog.galaxydev.pk";
 
 export default function NewsSlider() {
   const [slides, setSlides] = useState([]);
   const [current, setCurrent] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
   const timeoutRef = useRef(null);
-
   const delay = 5000;
-
-  console.log("Hello Slides" + slides);
 
   const resetTimeout = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
   };
 
-  // Fetch slides on mount
   useEffect(() => {
     const fetchSlides = async () => {
-      const response = await SliderService.GetSlides();
-      if (response) {
-        setSlides(response);
-      } else {
-        console.error("Failed to fetch slides");
+      try {
+        const response = await SliderService.GetSlides();
+        if (response && Array.isArray(response)) {
+          const updatedSlides = response.map((slide) => ({
+            ...slide,
+            image_url: slide.image_url
+              ? `${BASE_URL}${slide.image_url}`
+              : slide.image_url,
+          }));
+          setSlides(updatedSlides);
+        } else {
+          console.error("No slides found.");
+        }
+      } catch (err) {
+        console.error("Failed to fetch slides", err);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchSlides();
   }, []);
 
-  // Auto slide
   useEffect(() => {
-    if (slides.length === 0) return;
+    if (!slides.length) return;
     resetTimeout();
     timeoutRef.current = setTimeout(() => {
       setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -45,7 +54,8 @@ export default function NewsSlider() {
     return () => resetTimeout();
   }, [current, slides]);
 
-  if (slides.length === 0) return <p>Loading slides...</p>;
+  // Show skeleton while loading
+  if (isLoading) return <ImageSliderSkeleton count={1} />;
 
   return (
     <div className={styles.slider}>
@@ -62,7 +72,7 @@ export default function NewsSlider() {
         {slides.map((slide, index) => (
           <div className={styles.slide} key={index}>
             <Image
-              src={`${BASE_URL}${slide.image_url}`}
+              src={slide.image_url}
               alt={slide.title}
               layout="fill"
               objectFit="cover"
@@ -83,6 +93,7 @@ export default function NewsSlider() {
           </div>
         ))}
       </div>
+
       <div className={styles.dots}>
         {slides.map((_, idx) => (
           <div
