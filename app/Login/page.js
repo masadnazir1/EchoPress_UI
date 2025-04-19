@@ -80,7 +80,7 @@ const Login = () => {
 
           <GoogleLoginButton />
           <p style={{ textAlign: "center" }}>
-            Don't have an account?{" "}
+            Do not have an account?{" "}
             <span
               style={{ color: "blue", fontWeight: "bold", cursor: "pointer" }}
               onClick={() => router.push("/Signup")}
