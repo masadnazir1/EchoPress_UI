@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import styles from "../Styles/BottomTabs.module.css";
 import Image from "next/image";
@@ -10,14 +11,20 @@ import Profile from "../assets/Tabs/profile.png";
 
 export default function BottomTabs() {
   const pathname = usePathname();
+  const [profileIcon, setProfileIcon] = useState(Profile);
 
-  const ProfileIcon = localStorage.getItem("pic") || Profile;
+  useEffect(() => {
+    const pic = localStorage.getItem("pic");
+    if (pic) {
+      setProfileIcon(pic);
+    }
+  }, []);
 
   const tabs = [
     { name: "Home", icon: home, href: "/home" },
     { name: "Explore", icon: Explore, href: "/explore" },
     { name: "Saved", icon: Saved, href: "/Usersaved" },
-    { name: "Profile", icon: ProfileIcon, href: "/profile" },
+    { name: "Profile", icon: profileIcon, href: "/profile" },
   ];
 
   return (

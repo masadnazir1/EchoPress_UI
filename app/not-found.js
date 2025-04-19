@@ -1,11 +1,9 @@
 "use client";
+
 import styles from "./Styles/not-found.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import notfountImgg from "./assets/404.png";
-//
-//
-
 //
 
 export default function NotFound() {
