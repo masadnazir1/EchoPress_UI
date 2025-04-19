@@ -19,6 +19,11 @@ const nextConfig = {
         hostname: "apiblog.galaxydev.pk",
         pathname: "/uploads/article/**",
       },
+      {
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        pathname: "/**",
+      },
     ],
   },
 };

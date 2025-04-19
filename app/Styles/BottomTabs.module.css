@@ -22,6 +22,7 @@
   font-weight: 500;
   transition: color 0.3s ease;
   text-decoration: none;
+  gap: 5px;
 }
 
 .tabItem svg {
@@ -30,6 +31,11 @@
   margin-bottom: 2px;
   fill: #6b7280;
   transition: fill 0.3s ease;
+}
+
+.User {
+  border-radius: 100px;
+  border: 1px solid #6b7280;
 }
 
 .tabItem:hover,

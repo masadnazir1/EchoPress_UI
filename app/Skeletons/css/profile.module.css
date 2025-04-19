@@ -1,0 +1,100 @@
+/* Container for the whole page */
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fff;
+    padding: 10px;
+}
+
+/* Profile card skeleton styling */
+.profileCard {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+
+}
+
+/* Skeleton for profile picture */
+.profilePicSkeleton {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-bottom: 20px;
+    animation: skeleton 1.5s infinite ease-in-out;
+    justify-self: center;
+    align-self: center;
+}
+
+/* Skeleton for name */
+.nameSkeleton {
+    width: 80%;
+    height: 20px;
+    background-color: #ddd;
+    margin: 10px auto;
+    animation: skeleton 1.5s infinite ease-in-out;
+}
+
+/* Skeleton for email */
+.emailSkeleton {
+    width: 70%;
+    height: 16px;
+    background-color: #ddd;
+    margin: 10px auto;
+    animation: skeleton 1.5s infinite ease-in-out;
+}
+
+/* Skeleton for role */
+.roleSkeleton {
+    width: 60%;
+    height: 16px;
+    background-color: #ddd;
+    margin: 10px auto;
+    animation: skeleton 1.5s infinite ease-in-out;
+}
+
+/* Skeleton for logout button */
+.logoutBtnSkeleton {
+    width: 50%;
+    height: 40px;
+    background-color: #ddd;
+    margin: 20px auto;
+    border-radius: 5px;
+    animation: skeleton 1.5s infinite ease-in-out;
+}
+
+/* Skeleton animation */
+@keyframes skeleton {
+    0% {
+        background-color: #ddd;
+    }
+
+    50% {
+        background-color: #eaeaea;
+    }
+
+    100% {
+        background-color: #ddd;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .profilePicSkeleton {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nameSkeleton {
+        width: 90%;
+    }
+
+    .emailSkeleton,
+    .roleSkeleton {
+        width: 80%;
+    }
+}

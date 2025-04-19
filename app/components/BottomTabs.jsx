@@ -11,11 +11,13 @@ import Profile from "../assets/Tabs/profile.png";
 export default function BottomTabs() {
   const pathname = usePathname();
 
+  const ProfileIcon = localStorage.getItem("pic") || Profile;
+
   const tabs = [
     { name: "Home", icon: home, href: "/home" },
     { name: "Explore", icon: Explore, href: "/explore" },
-    { name: "Saved", icon: Saved, href: "/saved" },
-    { name: "Profile", icon: Profile, href: "/profile" },
+    { name: "Saved", icon: Saved, href: "/Usersaved" },
+    { name: "Profile", icon: ProfileIcon, href: "/profile" },
   ];
 
   return (
@@ -34,7 +36,7 @@ export default function BottomTabs() {
               alt={tab.name}
               width={24}
               height={24}
-              className={styles.icon}
+              className={tab.name === "Profile" ? styles.User : styles.icon}
             />
             <span className={styles.label}>{tab.name}</span>
           </div>
