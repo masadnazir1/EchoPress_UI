@@ -4,6 +4,7 @@ import styles from "./Login.module.css";
 import Image from "next/image";
 import GoogleLogo from "../assets/GLogo.webp";
 import authService from "@/app/services/authService";
+import GoogleLoginButton from "../components/GoogleLoginButton";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -72,17 +73,8 @@ const Login = () => {
               {error}
             </p>
           )}
-          <button type="button" className={styles.googleButton}>
-            <Image
-              src={GoogleLogo}
-              alt="Google"
-              width={100}
-              height={500}
-              priority
-              className={styles.googleIcon}
-            />
-            Continue with Google
-          </button>
+
+          <GoogleLoginButton />
         </form>
       </div>
     </div>

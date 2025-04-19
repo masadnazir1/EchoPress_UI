@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from "./Signup.module.css"; // Adjust the path to your CSS module
 import authService from "@/app/services/authService";
 import GoogleLogo from "../assets/GLogo.webp";
+import GoogleLoginButton from "../components/GoogleLoginButton";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -21,7 +22,7 @@ const Signup = () => {
     try {
       const data = await authService.registerUser(name, email, password);
       // Handle successful registration (e.g., show success message or redirect)
-      console.log("Registration successful:", data);
+
       // Redirect after successful registration (using next/router or window.location)
       // Router.push('/login');
     } catch (err) {
@@ -77,10 +78,10 @@ const Signup = () => {
           </button>
         </form>
         <div className={styles.divider}>or</div>
-        <button className={styles.googleButton}>
-          <Image className={styles.googleIcon} src={GoogleLogo} alt="Google" />
-          Sign up with Google
-        </button>
+
+        <div style={{ width: "100%" }}>
+          <GoogleLoginButton />
+        </div>
       </div>
     </div>
   );
