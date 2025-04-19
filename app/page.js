@@ -1,46 +1,49 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Logo from "./assets/logo.png";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   const [year, setYear] = useState("");
 
   useEffect(() => {
     setYear(new Date().getFullYear().toString());
+    if (localStorage.getItem("JWT")) {
+      router.push("/home");
+    }
   }, []);
 
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div className={styles.wrapper}>
+      <main className={styles.mainContent}>
         <Image
-          className={styles.logo}
           src={Logo}
-          alt="Your App Logo"
-          width={180}
-          height={38}
+          alt="EchoPress Logo"
+          width={150}
+          height={40}
           priority
         />
         <h1 className={styles.title}>Welcome to EchoPress</h1>
         <p className={styles.subtitle}>
-          The platform that empowers news creators, journalists, and businesses
-          to share their stories and build their audience.
+          Empowering journalists, news creators, and storytellers to publish,
+          grow, and monetize their content.
         </p>
-        <div className={styles.ctaContainer}>
-          <a href="/Login" className={styles.button}>
+        <div className={styles.buttonGroup}>
+          <a href="/login" className={styles.btnPrimary}>
             Log In
           </a>
-          <a href="/Signup" className={styles.button}>
+          <a href="/signup" className={styles.btnSecondary}>
             Sign Up
           </a>
         </div>
       </main>
 
-      {/* Get Started Button at the Bottom Right */}
-      <div className={styles.getStartedBtn}>Get Started</div>
+      <div className={styles.floatingBtn}>Get Started</div>
 
-      {/* Footer */}
       <footer className={styles.footer}>
         <p>&copy; {year} EchoPress. All rights reserved.</p>
       </footer>

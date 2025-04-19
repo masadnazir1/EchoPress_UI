@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import styles from "./Signup.module.css"; // Adjust the path to your CSS module
 import authService from "@/app/services/authService";
-import GoogleLogo from "../assets/GLogo.webp";
+import { useRouter } from "next/navigation";
+import BackPNG from "../assets/UniversalIcons/Back.png";
+import Image from "next/image";
 import GoogleLoginButton from "../components/GoogleLoginButton";
 
 const Signup = () => {
+  const router = useRouter();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,6 +36,9 @@ const Signup = () => {
 
   return (
     <div className={styles.registerWrapper}>
+      <button className={styles.Back} onClick={() => router.back()}>
+        <Image src={BackPNG} width={30} height={30} alt="Back" />
+      </button>
       <div className={styles.registerBox}>
         <h1 className={styles.title}>Register</h1>
         <p className={styles.subtitle}>Create your account</p>
@@ -82,6 +87,15 @@ const Signup = () => {
         <div style={{ width: "100%" }}>
           <GoogleLoginButton />
         </div>
+        <p style={{ textAlign: "center", marginTop: "15px" }}>
+          Have an account?{" "}
+          <span
+            style={{ color: "blue", fontWeight: "bold", cursor: "pointer" }}
+            onClick={() => router.push("/Login")}
+          >
+            Create
+          </span>
+        </p>
       </div>
     </div>
   );

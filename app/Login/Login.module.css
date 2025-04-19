@@ -3,8 +3,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   padding: 2rem;
   background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+}
+
+.Back {
+  color: transparent;
+  position: fixed;
+  background: transparent;
+  top: 10px;
+  left: 10px;
+  border: none;
+  cursor: pointer;
 }
 
 .loginBox {

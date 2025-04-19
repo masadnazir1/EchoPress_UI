@@ -1,16 +1,17 @@
 "use client";
 import { useState } from "react";
 import styles from "./Login.module.css";
+import BackPNG from "../assets/UniversalIcons/Back.png";
 import Image from "next/image";
-import GoogleLogo from "../assets/GLogo.webp";
 import authService from "@/app/services/authService";
+import { useRouter } from "next/navigation";
 import GoogleLoginButton from "../components/GoogleLoginButton";
 
 const Login = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
   //
   //
@@ -33,6 +34,9 @@ const Login = () => {
   //
   return (
     <div className={styles.loginWrapper}>
+      <button className={styles.Back} onClick={() => router.back()}>
+        <Image src={BackPNG} width={30} height={30} alt="Back" />
+      </button>
       <div className={styles.loginBox}>
         <h1 className={styles.title}>Welcome Back</h1>
         <p className={styles.subtitle}>Please log in to your account</p>
@@ -75,6 +79,15 @@ const Login = () => {
           )}
 
           <GoogleLoginButton />
+          <p style={{ textAlign: "center" }}>
+            Don't have an account?{" "}
+            <span
+              style={{ color: "blue", fontWeight: "bold", cursor: "pointer" }}
+              onClick={() => router.push("/Signup")}
+            >
+              Create
+            </span>
+          </p>
         </form>
       </div>
     </div>
