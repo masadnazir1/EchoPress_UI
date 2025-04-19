@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import styles from "../Styles/ArticleCard.module.css";
 import articleService from "../services/articleService";
 import ArticleCardSkeleton from "../Skeletons/ArticleCardSkeleton";
@@ -9,8 +10,16 @@ import Image from "next/image";
 import { API } from "@/API_URL";
 
 const ArticleCard = () => {
+  //init the hooks
+  const router = useRouter();
+  //
   const [articles, setArticles] = useState([]);
   const [error, setError] = useState(null);
+
+  //method to push to the details page
+  const handleClick = (articleId) => {
+    router.push(`/ArticleDetails/${articleId}`);
+  };
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -49,7 +58,7 @@ const ArticleCard = () => {
             <div
               key={article.id}
               className={styles.card}
-              onClick={() => console.log(article.id)}
+              onClick={() => handleClick(article.id)}
             >
               <div className={styles.content}>
                 <h2 className={styles.title}>{article.title}</h2>

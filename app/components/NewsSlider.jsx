@@ -75,7 +75,7 @@ export default function NewsSlider() {
               src={slide.image_url}
               alt={slide.title}
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: "cover" }}
               className={styles.image}
             />
             <div className={styles.overlay}>
