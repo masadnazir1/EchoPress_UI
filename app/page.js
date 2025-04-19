@@ -33,10 +33,10 @@ export default function Home() {
           grow, and monetize their content.
         </p>
         <div className={styles.buttonGroup}>
-          <a href="/login" className={styles.btnPrimary}>
+          <a href="/Login" className={styles.btnPrimary}>
             Log In
           </a>
-          <a href="/signup" className={styles.btnSecondary}>
+          <a href="/Signup" className={styles.btnSecondary}>
             Sign Up
           </a>
         </div>
