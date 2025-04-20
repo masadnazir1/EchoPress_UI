@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "../Styles/Explore.module.css";
+import { useRouter } from "next/navigation";
+import styles from "../Styles/Usersaved.module.css";
 import searchicon from "../assets/UniversalIcons/Search.png";
 import SavedArticleService from "../services/SavedArticleService";
 import { API } from "@/API_URL";
@@ -12,6 +13,9 @@ import defaultsarticle from "../assets/Defaults/defaultsarticle.webp";
 import ArticleCardSkeleton from "../Skeletons/ArticleCardSkeleton";
 
 export default function Usersaved() {
+  //init the hooks
+  const router = useRouter();
+  //
   const [articles, setArticles] = useState([]);
   const [userId, setUserId] = useState("");
   const [isLoading, setisLoading] = useState(false);
@@ -93,6 +97,11 @@ export default function Usersaved() {
     }
   };
 
+  //method to push to the details page
+  const handleClick = (articleId) => {
+    router.push(`/ArticleDetails/${articleId}`);
+  };
+
   return isLoading ? (
     <div
       style={{
@@ -133,7 +142,11 @@ export default function Usersaved() {
             </p>
           ) : (
             articles.map((article) => (
-              <div className={styles.card} key={article.id}>
+              <div
+                className={styles.card}
+                key={article.id}
+                onClick={() => handleClick(article.id)}
+              >
                 <Image
                   src={article.cover_image_url}
                   alt={article.title}

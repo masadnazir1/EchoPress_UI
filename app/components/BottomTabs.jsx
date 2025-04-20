@@ -17,6 +17,8 @@ export default function BottomTabs() {
     const pic = localStorage.getItem("pic");
     if (pic) {
       setProfileIcon(pic);
+    } else {
+      setProfileIcon(Profile);
     }
   }, []);
 

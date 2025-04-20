@@ -26,8 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .ImageIcon {
