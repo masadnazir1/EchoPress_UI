@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
 import styles from "./Login.module.css";
+
+import { jwtDecode } from "jwt-decode";
 import BackPNG from "../assets/UniversalIcons/Back.png";
 import Image from "next/image";
 import authService from "@/app/services/authService";
@@ -23,9 +25,17 @@ const Login = () => {
       const data = await authService.loginUser(email, password);
       // Handle successful login, redirect to dashboard or another page
       setLoading(false);
-      //  setError(data.message)
-      // Redirect example:
+      //
+
       // Router.push('/dashboard');
+
+      if (data.message === "Login successful") {
+        const decoded = jwtDecode(data.token);
+        localStorage.setItem("id", decoded.id);
+
+        setError("Login successful");
+        router.push("/home");
+      }
     } catch (err) {
       setLoading(false);
       setError(err.message);

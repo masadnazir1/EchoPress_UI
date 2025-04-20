@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import styles from "../Styles/profile.module.css";
 import ProfileLoading from "../Skeletons/ProfileLoading";
+import fallbackProfile from "../assets/Tabs/profile.png";
 
 export default function ProfilePage() {
   const [user, setUser] = useState(null);
@@ -14,7 +15,7 @@ export default function ProfilePage() {
     if (token) {
       try {
         const decoded = jwtDecode(token); // Decode the JWT
-        console.log(decoded);
+
         localStorage.setItem("pic", decoded.pic);
         setUser({
           profilePicture: decoded.pic,
@@ -44,13 +45,11 @@ export default function ProfilePage() {
   return (
     <div className={styles.container}>
       <div className={styles.profileCard}>
-        {user && (
-          <img
-            src={user.profilePicture}
-            alt="Profile"
-            className={styles.profilePic}
-          />
-        )}
+        <img
+          src={user.profilePicture || fallbackProfile}
+          alt="Profile"
+          className={styles.profilePic}
+        />
 
         <h2 className={styles.name}>{user.name}</h2>
         <p className={styles.email}>{user.email}</p>

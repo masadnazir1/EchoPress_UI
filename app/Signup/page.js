@@ -25,10 +25,20 @@ const Signup = () => {
       const data = await authService.registerUser(name, email, password);
       // Handle successful registration (e.g., show success message or redirect)
 
-      // Redirect after successful registration (using next/router or window.location)
-      // Router.push('/login');
+      if (data === 409) {
+        setError("This email is already registered.");
+      }
+
+      //
+      if (data === 201) {
+        setError("User registered successfully");
+
+        router.push("/Login");
+      }
     } catch (err) {
-      setError(err.message); // Show the error message to the user
+      setError("Something went wrong. Please try again.");
+
+      console.log("Error:", err.response?.status || err.message);
     } finally {
       setLoading(false);
     }

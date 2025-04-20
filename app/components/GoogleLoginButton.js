@@ -4,6 +4,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { useRouter } from "next/navigation";
 import authService from "../services/authService";
 import { useState } from "react";
+import { jwtDecode } from "jwt-decode";
 
 export default function GoogleLoginButton() {
   const Router = useRouter();
@@ -21,6 +22,9 @@ export default function GoogleLoginButton() {
 
       // Save JWT (localStorage, cookie, or your auth context)
       localStorage.setItem("JWT", res.token);
+      //get the user id and set in the localstorage
+      const decoded = jwtDecode(res.token);
+      localStorage.setItem("id", decoded.id);
 
       Router.push("/home");
 

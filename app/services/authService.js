@@ -64,11 +64,12 @@ const registerUser = async (name, email, password) => {
 
     const data = await response.json();
 
-    if (!response.ok) {
-      // Check if response status is not OK (e.g., 400 or 500)
-      throw new Error(
-        data.message || "Registration failed. Please try again later."
-      );
+    if (data.error === "Email already in use") {
+      return 409;
+    }
+
+    if (data.message === "User registered successfully") {
+      return 201;
     }
 
     return data; // Return the response data (success message or token if returned)
