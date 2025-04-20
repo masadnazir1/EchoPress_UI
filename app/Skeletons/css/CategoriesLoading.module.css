@@ -1,0 +1,59 @@
+/* Skeleton container styles */
+.categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.skeletonCard {
+    position: relative;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    padding: 5px;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Common shimmer overlay */
+.skeletonCard::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    animation: shimmer 1.5s infinite;
+}
+
+/* Skeleton Icon */
+.skeletonIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin: 0 auto;
+}
+
+/* Skeleton Text */
+.skeletonText {
+    width: 60%;
+    height: 14px;
+    background-color: #e0e0e0;
+    margin: 12px auto 0 auto;
+    border-radius: 6px;
+}

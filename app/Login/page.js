@@ -25,9 +25,6 @@ const Login = () => {
       const data = await authService.loginUser(email, password);
       // Handle successful login, redirect to dashboard or another page
       setLoading(false);
-      //
-
-      // Router.push('/dashboard');
 
       if (data.message === "Login successful") {
         const decoded = jwtDecode(data.token);
