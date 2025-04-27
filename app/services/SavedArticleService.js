@@ -30,13 +30,16 @@ const getSavedArticles = async (userId, page = 1, limit = 10) => {
 // Save an article for a user
 const saveArticle = async (userId, articleId) => {
   try {
-    const response = await fetch(`${API}/api/savedarticles/save`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ user_id: userId, article_id: articleId }),
-    });
+    const response = await fetch(
+      `${API}/api/savedarticles/${userId}/${articleId}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // no need for body anymore because you're sending params in the URL
+      }
+    );
 
     const data = await response.json();
 

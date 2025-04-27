@@ -1,0 +1,33 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 40000;
+}
+
+.modal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #eceaea;
+    border-top-left-radius: 1.5rem;
+    /* 24px */
+    border-top-right-radius: 1.5rem;
+    padding: 1.5rem;
+    /* 24px */
+    z-index: 40000;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.handle {
+    width: 3rem;
+    /* 48px */
+    height: 0.375rem;
+    /* 6px */
+    background-color: #d1d5db;
+    /* gray-300 */
+    border-radius: 9999px;
+    margin: 0 auto 1rem auto;
+    /* center with margin bottom */
+}

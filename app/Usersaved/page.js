@@ -142,11 +142,7 @@ export default function Usersaved() {
             </p>
           ) : (
             articles.map((article) => (
-              <div
-                className={styles.card}
-                key={article.id}
-                onClick={() => handleClick(article.id)}
-              >
+              <div className={styles.card} key={article.id}>
                 <Image
                   src={article.cover_image_url}
                   alt={article.title}
@@ -154,7 +150,10 @@ export default function Usersaved() {
                   height={80}
                   className={styles.thumbnail}
                 />
-                <div className={styles.cardContent}>
+                <div
+                  className={styles.cardContent}
+                  onClick={() => handleClick(article.id)}
+                >
                   <h3 className={styles.title}>{article.title}</h3>
                   <p className={styles.source}>Tech Weekly</p>
                   <p className={styles.readTime}>8 min read</p>

@@ -14,6 +14,7 @@
   border-radius: 5px;
   cursor: pointer;
   background: #f7f7f7;
+
   &&:hover {
     background-color: #ccc;
     cursor: pointer;
@@ -45,10 +46,36 @@
   font-weight: 500;
 }
 
+.ModelOptionsButtonBox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: end;
+  /* padding-right: 5px; */
+}
+
+.ModelOptionsButton {
+  border: none;
+  align-items: center;
+  justify-content: end;
+  display: flex;
+  text-align: end;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 100px;
+  width: 100%;
+
+  &&:hover {
+    background-color: #b6b4b4;
+  }
+}
+
 .cover {
   display: flex;
   align-items: center;
   justify-content: end;
+  flex-direction: column;
 }
 
 .image {
@@ -69,6 +96,31 @@
   color: red;
 }
 
+
+.ModelButton {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.rightButton {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 10px;
+  gap: 3px;
+}
+
+.rightButton span:nth-child(1) {
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .card {
     flex-direction: row;
@@ -76,7 +128,9 @@
 
   .cover {
     max-width: 100%;
+    flex-direction: column;
   }
+
   .title {
     font-size: 100%;
   }
@@ -88,6 +142,7 @@
     color: #666;
     gap: 20px;
   }
+
   /* .image {
     width: 100px;
   } */
