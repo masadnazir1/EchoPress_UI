@@ -5,10 +5,12 @@ import { jwtDecode } from "jwt-decode";
 import styles from "../Styles/profile.module.css";
 import ProfileLoading from "../Skeletons/ProfileLoading";
 import fallbackProfile from "../assets/Tabs/profile.png";
+import BottomModal from "../components/BottomModal";
 
 export default function ProfilePage() {
   const [user, setUser] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("JWT");
@@ -55,30 +57,34 @@ export default function ProfilePage() {
         <p className={styles.email}>{user.email}</p>
         <p className={styles.role}>Role: {user.role}</p>
 
-        <button className={styles.logoutBtn} onClick={() => setShowModal(true)}>
+        <button
+          className={styles.logoutBtn}
+          onClick={() => setIsModalOpen(true)}
+        >
           Logout
         </button>
       </div>
 
-      {/* Modal for Logout Confirmation */}
-      {showModal && (
-        <div className={styles.modalOverlay}>
-          <div className={styles.modalContent}>
-            <h3>Are you sure you want to logout?</h3>
-            <div className={styles.modalActions}>
-              <button onClick={handleLogout} className={styles.confirmBtn}>
-                Yes, Logout
-              </button>
-              <button
-                onClick={() => setShowModal(false)}
-                className={styles.cancelBtn}
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
+      {/* The Modal */}
+      <BottomModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h2
+          style={{ fontSize: "20px", fontWeight: "bold", marginBottom: "16px" }}
+        >
+          Are you sure you want to logout?
+        </h2>
+
+        <div className={styles.modalActions}>
+          <button onClick={handleLogout} className={styles.confirmBtn}>
+            Yes, Logout
+          </button>
+          <button
+            onClick={() => setIsModalOpen(false)}
+            className={styles.cancelBtn}
+          >
+            Cancel
+          </button>
         </div>
-      )}
+      </BottomModal>
     </div>
   );
 }

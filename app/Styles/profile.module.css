@@ -98,17 +98,18 @@
 /* Modal actions buttons */
 .modalActions {
   display: flex;
-  justify-content: space-between;
+
   gap: 10px;
 }
 
 .confirmBtn,
 .cancelBtn {
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 50px;
   font-size: 1rem;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 
 .confirmBtn {

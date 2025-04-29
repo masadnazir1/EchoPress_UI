@@ -31,6 +31,11 @@ export default function Searchpage() {
     }
   };
 
+  //method to push to the details page
+  const handleClick = (articleId) => {
+    router.push(`/ArticleDetails/${articleId}`);
+  };
+
   return (
     <div className={styles.searchContainer}>
       <button className={styles.BackBtn} onClick={() => router.back()}>
@@ -59,7 +64,11 @@ export default function Searchpage() {
 
       {!isLoading &&
         articles.map((article) => (
-          <div key={article.id} className={styles.articleCard}>
+          <div
+            key={article.id}
+            className={styles.articleCard}
+            onClick={() => handleClick(article.id)}
+          >
             <div className={styles.articleContent}>
               <h3 className={styles.title}>{article.title}</h3>
               <div className={styles.meta}>
