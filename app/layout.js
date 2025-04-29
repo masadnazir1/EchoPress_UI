@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import BottomTabsWrapper from "./components/BottomTabsWrapper";
 import GoogleProviderWrapper from "./components/GoogleProviderWrapper";
+import MobileOnlyWrapper from "./MobileOnlyWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,10 +26,12 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        <GoogleProviderWrapper>
-          {children}
-          <BottomTabsWrapper />
-        </GoogleProviderWrapper>
+        <MobileOnlyWrapper>
+          <GoogleProviderWrapper>
+            {children}
+            <BottomTabsWrapper />
+          </GoogleProviderWrapper>
+        </MobileOnlyWrapper>
       </body>
     </html>
   );
