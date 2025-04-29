@@ -37,7 +37,10 @@ export default function Explore() {
         <div className={styles.content}>
           <h2 className={styles.Heading}>Popular Categories</h2>
 
-          <div className={styles.inputWraper}>
+          <div
+            className={styles.inputWraper}
+            onClick={() => router.push("/searchpage")}
+          >
             <Image
               src={searchicon}
               alt="search"

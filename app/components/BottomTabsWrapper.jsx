@@ -7,7 +7,7 @@ export default function BottomTabsWrapper() {
   const pathname = usePathname();
 
   // List of routes where BottomTabs should be hidden
-  const excludedRoutes = ["/Login", "/Signup", "/settings", "/"];
+  const excludedRoutes = ["/Login", "/Signup", "/settings", "/", "/searchpage"];
 
   // Check for exact match or dynamic route pattern (e.g. /ArticleDetails/123)
   const isExcluded = excludedRoutes.some(
