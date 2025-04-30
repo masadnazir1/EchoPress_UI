@@ -58,6 +58,40 @@ const getArticleById = async (id) => {
   }
 };
 
+//fun to get the articles by categry id
+const getAllArticlesById = async (page = 1, limit = 3, categoryId) => {
+  if (!categoryId) {
+    console.error("categry id required to get the articles");
+  }
+  try {
+    const response = await fetch(
+      `${API}/api/articles/category?page=${page}&limit=${limit}&categoryId=${categoryId}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      // If the response is not OK (e.g., server error or bad request)
+      throw new Error(
+        data.message || "Failed to fetch articles. Please try again later."
+      );
+    }
+
+    return data; // Return the list of articles and pagination details
+  } catch (err) {
+    console.error("Error fetching articles:", err.message);
+    // Handle network or other errors
+    throw new Error(
+      err.message || "An error occurred while fetching articles."
+    );
+  }
+};
 // Function to create a new article
 const createArticle = async (
   title,
@@ -163,4 +197,5 @@ export default {
   createArticle,
   updateArticle,
   deleteArticle,
+  getAllArticlesById,
 };

@@ -120,7 +120,10 @@ export default function Usersaved() {
       <div className={styles.content}>
         <h2 className={styles.Heading}>Saved Articles</h2>
 
-        <div className={styles.inputWraper}>
+        <div
+          className={styles.inputWraper}
+          onClick={() => router.push("/searchpage")}
+        >
           <Image
             src={searchicon}
             alt="search"
