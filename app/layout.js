@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "EchoPress",
+  title: "ReadIn",
   description: "Every article is a conversation",
 };
 

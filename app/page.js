@@ -20,14 +20,8 @@ export default function Home() {
   return (
     <div className={styles.wrapper}>
       <main className={styles.mainContent}>
-        <Image
-          src={Logo}
-          alt="EchoPress Logo"
-          width={150}
-          height={40}
-          priority
-        />
-        <h1 className={styles.title}>Welcome to EchoPress</h1>
+        <Image src={Logo} alt="ReadIn Logo" width={150} height={40} priority />
+        <h1 className={styles.title}>Welcome to ReadIn</h1>
         <p className={styles.subtitle}>
           Empowering journalists, news creators, and storytellers to publish,
           grow, and monetize their content.
@@ -45,7 +39,7 @@ export default function Home() {
       <div className={styles.floatingBtn}>Get Started</div>
 
       <footer className={styles.footer}>
-        <p>&copy; {year} EchoPress. All rights reserved.</p>
+        <p>&copy; {year} ReadIn. All rights reserved.</p>
       </footer>
     </div>
   );
