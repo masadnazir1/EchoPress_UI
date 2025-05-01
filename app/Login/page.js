@@ -85,7 +85,9 @@ const Login = () => {
             </p>
           )}
 
-          <GoogleLoginButton />
+          <div className={styles.LoginGoogleWraper}>
+            <GoogleLoginButton />
+          </div>
           <p style={{ textAlign: "center" }}>
             Do not have an account?{" "}
             <span

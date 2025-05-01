@@ -8,6 +8,13 @@
   background: linear-gradient(135deg, #f8fafc, #e2e8f0);
 }
 
+.LoginGoogleWraper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .Back {
   color: transparent;
   position: fixed;
