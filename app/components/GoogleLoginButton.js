@@ -41,8 +41,8 @@ export default function GoogleLoginButton() {
   };
 
   return (
-    <div>
-      <div>
+    <div style={{ width: "100%" }}>
+      <div style={{ width: "100%" }}>
         {loading ? (
           <div style={{ textAlign: "center", padding: "1rem" }}>
             <span>Loading...</span> {/* You can replace this with a spinner */}
