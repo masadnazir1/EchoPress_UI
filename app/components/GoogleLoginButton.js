@@ -48,7 +48,11 @@ export default function GoogleLoginButton() {
             <span>Loading...</span> {/* You can replace this with a spinner */}
           </div>
         ) : (
-          <GoogleLogin onSuccess={handleSuccess} onError={handleError} />
+          <GoogleLogin
+            onSuccess={handleSuccess}
+            onError={handleError}
+            width="100%"
+          />
         )}
       </div>
     </div>
