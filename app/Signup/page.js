@@ -94,7 +94,7 @@ const Signup = () => {
         </form>
         <div className={styles.divider}>or</div>
 
-        <div style={{ width: "100%" }}>
+        <div>
           <div className={styles.LoginGoogleWraper}>
             <GoogleLoginButton />
           </div>
