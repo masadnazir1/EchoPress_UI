@@ -14,3 +14,18 @@
   width: 100%;
   margin: 5px;
 }
+
+.HeaderArea {
+  background-color: #fff;
+  box-shadow: 1px 1px 10px 5px #00000013;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.backBTN {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 10px;
+}

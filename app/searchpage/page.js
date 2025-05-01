@@ -5,6 +5,8 @@ import { API } from "@/API_URL";
 import styles from "../Styles/Searchpage.module.css";
 import SearchService from "../services/SearchService";
 import Back from "../assets/UniversalIcons/Back.png";
+import placeholder from "../assets/Defaults/defaultsarticle.webp";
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -83,14 +85,17 @@ export default function Searchpage() {
               </div>
             </div>
             <div className={styles.imageWrapper}>
-              <img
+              <Image
                 src={
                   article.cover_image_url
                     ? `${API}${article.cover_image_url}`
-                    : "/placeholder.jpg"
+                    : placeholder
                 }
                 alt={article.title}
                 className={styles.thumbnail}
+                width={100}
+                height={100}
+                objectFit="contain"
               />
             </div>
           </div>

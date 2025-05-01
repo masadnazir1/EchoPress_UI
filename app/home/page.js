@@ -9,16 +9,6 @@ export default function Home() {
         <NewsSlider />
 
         <div style={{ width: "100%", marginTop: "10px" }}>
-          <h3
-            style={{
-              textAlign: "start",
-              fontWeight: "bold",
-              marginTop: "10px",
-              marginBottom: "10px",
-            }}
-          >
-            Selected only for you
-          </h3>
           <ArticleCard />
         </div>
       </main>

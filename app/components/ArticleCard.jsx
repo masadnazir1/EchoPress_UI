@@ -78,6 +78,21 @@ const ArticleCard = () => {
   return (
     <div className={styles.wrapper}>
       {articles.length > 0 ? (
+        <h3
+          style={{
+            textAlign: "start",
+            fontWeight: "bold",
+            marginTop: "10px",
+            marginBottom: "10px",
+          }}
+        >
+          Selected only for you
+        </h3>
+      ) : (
+        <ArticleCardSkeleton />
+      )}
+
+      {articles.length > 0 ? (
         articles.map((article) => {
           const publishedDate = new Date(article.published_at);
           const now = new Date();

@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import styles from "../Styles/NewsSlider.module.css";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import SliderService from "../services/SliderService";
 import ImageSliderSkeleton from "../Skeletons/ImageSliderSkeleton";
@@ -9,6 +10,7 @@ import ImageSliderSkeleton from "../Skeletons/ImageSliderSkeleton";
 const BASE_URL = "https://apiblog.galaxydev.pk";
 
 export default function NewsSlider() {
+  const router = useRouter();
   const [slides, setSlides] = useState([]);
   const [current, setCurrent] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -61,7 +63,12 @@ export default function NewsSlider() {
     <div className={styles.slider}>
       <div className={styles.sliderHeader}>
         <h4 className={styles.Breakingh4}>Breaking News</h4>
-        <button>See All</button>
+        <button
+          onClick={() => router.push("/allarticles")}
+          style={{ cursor: "pointer" }}
+        >
+          See All
+        </button>
         <div className={styles.sliderHeaderLine}></div>
       </div>
 
