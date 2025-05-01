@@ -51,7 +51,7 @@ export default function GoogleLoginButton() {
           <GoogleLogin
             onSuccess={handleSuccess}
             onError={handleError}
-            width="100%"
+            theme="filled_blue"
           />
         )}
       </div>
