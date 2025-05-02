@@ -1,0 +1,96 @@
+.DesktopHeaderContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 0.5px solid #ccc;
+    background-color: #fff;
+    padding-bottom: 5px;
+    position: fixed;
+    padding: 0px 10px;
+    top: 0;
+    z-index: 1000000000000;
+}
+
+.logoBox {
+    width: 10%;
+    display: flex;
+}
+
+.logo {
+    width: 100%;
+}
+
+.SearchBox {
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.Wraper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #F9F9F9;
+    border-radius: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 50%;
+}
+
+.Wraper input {
+    background-color: #F9F9F9;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+.ActionsBox {
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.ProfileButton {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.Profile {
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    border: 0.5px solid #ccc;
+
+}
+
+.Model {
+
+    background-color: #fff;
+    top: 50px;
+    position: absolute;
+    /* box-shadow: -1px -1px 10px 1px #00000072; */
+    width: 20vw;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.ProfileBTN {
+    width: 100%;
+    border: none;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ccc;
+    }
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import DesktopHeader from "./components/DesktopHeader";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Logo from "./assets/Logo.svg";

@@ -26,12 +26,12 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        <MobileOnlyWrapper>
-          <GoogleProviderWrapper>
-            {children}
-            <BottomTabsWrapper />
-          </GoogleProviderWrapper>
-        </MobileOnlyWrapper>
+        {/* <MobileOnlyWrapper> */}
+        <GoogleProviderWrapper>
+          {children}
+          <BottomTabsWrapper />
+        </GoogleProviderWrapper>
+        {/* </MobileOnlyWrapper> */}
       </body>
     </html>
   );

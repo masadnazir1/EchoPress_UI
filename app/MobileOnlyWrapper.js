@@ -17,7 +17,7 @@ export default function MobileOnlyWrapper({ children }) {
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  if (!isMobile) {
+  if (isMobile) {
     return (
       <div
         style={{
