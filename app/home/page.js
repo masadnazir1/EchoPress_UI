@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import styles from "../Styles/Homepage.module.css";
 import NewsSlider from "../components/NewsSlider";
-
 import ArticleCard from "../components/ArticleCard";
 import DesktopHeader from "../components/DesktopHeader";
 

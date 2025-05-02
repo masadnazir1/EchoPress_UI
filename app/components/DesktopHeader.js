@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../Styles/DesktopHeader.module.css";
 import { useRouter } from "next/navigation";
 import SearchIcon from "../assets/UniversalIcons/Search.png";
@@ -13,12 +13,20 @@ import useIsMobile from "../Hooks/useIsMobile"; // Import your custom hook
 export default function DesktopHeader() {
   const Router = useRouter();
   const isMobile = useIsMobile(); // Determine device type
+  const [profilePic, setProfilePic] = useState("");
 
   const [isModel, setModel] = useState(false);
 
   function handleModel() {
     setModel((prev) => !prev);
   }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const pic = localStorage.getItem("pic");
+      if (pic) setProfilePic(pic);
+    }
+  }, []);
 
   // Don't render on mobile
   if (isMobile) {
@@ -45,7 +53,7 @@ export default function DesktopHeader() {
       <div className={styles.ActionsBox}>
         <button className={styles.ProfileButton} onClick={handleModel}>
           <Image
-            src={localStorage.getItem("pic") || ""}
+            src={profilePic}
             width={50}
             height={50}
             alt="Profile"
