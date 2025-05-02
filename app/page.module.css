@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(to bottom right, #ffffff, #f3f4f6);

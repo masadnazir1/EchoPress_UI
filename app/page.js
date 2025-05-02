@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
-import Logo from "./assets/logo.png";
+import Logo from "./assets/Logo.svg";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -35,8 +35,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-
-      <div className={styles.floatingBtn}>Get Started</div>
 
       <footer className={styles.footer}>
         <p>&copy; {year} ReadIn. All rights reserved.</p>

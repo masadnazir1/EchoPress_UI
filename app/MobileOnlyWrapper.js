@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import logo from "./assets/logo.png";
+import logo from "./assets/Logo.svg";
 
 export default function MobileOnlyWrapper({ children }) {
   const [isMobile, setIsMobile] = useState(true);
@@ -36,8 +36,8 @@ export default function MobileOnlyWrapper({ children }) {
         <Image
           src={logo}
           alt="EchoPress Logo"
-          width={100}
-          height={64}
+          width={200}
+          height={100}
           style={{ marginBottom: "1.5rem" }}
         />
 
@@ -49,7 +49,7 @@ export default function MobileOnlyWrapper({ children }) {
             color: "#000",
           }}
         >
-          EchoPress is built for mobile
+          ReadIn is built for mobile
         </h1>
         <p
           style={{

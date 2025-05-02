@@ -5,6 +5,7 @@ import { jwtDecode } from "jwt-decode";
 import styles from "../Styles/profile.module.css";
 import ProfileLoading from "../Skeletons/ProfileLoading";
 import fallbackProfile from "../assets/Tabs/profile.png";
+import Image from "next/image";
 import BottomModal from "../components/BottomModal";
 
 export default function ProfilePage() {
@@ -47,10 +48,12 @@ export default function ProfilePage() {
   return (
     <div className={styles.container}>
       <div className={styles.profileCard}>
-        <img
+        <Image
           src={user.profilePicture || fallbackProfile}
           alt="Profile"
           className={styles.profilePic}
+          width={80}
+          height={80}
         />
 
         <h2 className={styles.name}>{user.name}</h2>
