@@ -5,6 +5,7 @@ import styles from "../Styles/DesktopHeader.module.css";
 import { useRouter } from "next/navigation";
 import SearchIcon from "../assets/UniversalIcons/Search.png";
 import profileoutline from "../assets/UniversalIcons/profileoutline.png";
+import placeholderIcon from "../assets/UniversalIcons/profileoutline.png";
 import Logout from "../assets/UniversalIcons/Logout.png";
 import Logo from "../assets/Logo.svg";
 import Image from "next/image";
@@ -53,7 +54,7 @@ export default function DesktopHeader() {
       <div className={styles.ActionsBox}>
         <button className={styles.ProfileButton} onClick={handleModel}>
           <Image
-            src={profilePic}
+            src={profilePic || placeholderIcon}
             width={50}
             height={50}
             alt="Profile"
