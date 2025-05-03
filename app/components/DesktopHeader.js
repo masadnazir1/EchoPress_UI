@@ -47,7 +47,13 @@ export default function DesktopHeader() {
       </div>
       <div className={styles.SearchBox}>
         <div className={styles.Wraper}>
-          <Image src={SearchIcon} width={30} height={30} alt="Search Icon" />
+          <Image
+            src={SearchIcon}
+            width={30}
+            height={30}
+            alt="Search Icon"
+            style={{ filter: " brightness() invert(0.5)" }}
+          />
           <input type="text" placeholder="Search" />
         </div>
       </div>
