@@ -55,8 +55,8 @@ export default function DesktopHeader() {
         <button className={styles.ProfileButton} onClick={handleModel}>
           <Image
             src={profilePic || placeholderIcon}
-            width={50}
-            height={50}
+            width={40}
+            height={40}
             alt="Profile"
             className={styles.Profile}
           />
