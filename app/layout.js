@@ -3,6 +3,7 @@ import "./globals.css";
 import BottomTabsWrapper from "./components/BottomTabsWrapper";
 import GoogleProviderWrapper from "./components/GoogleProviderWrapper";
 import MobileOnlyWrapper from "./MobileOnlyWrapper";
+import Clarity from "@microsoft/clarity";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,6 +20,11 @@ export const metadata = {
   description: "Every article is a conversation",
 };
 
+//
+const projectId = "pjeis78i5w";
+
+Clarity.init(projectId);
+//
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
