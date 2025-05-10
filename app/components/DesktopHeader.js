@@ -18,7 +18,15 @@ export default function DesktopHeader() {
 
   const [isModel, setModel] = useState(false);
 
-  function handleModel() {
+  function handleModel(getroute) {
+    console.log(getroute);
+    if (getroute === "OUT") {
+      localStorage.clear();
+      setModel((prev) => !prev);
+    } else if (getroute === "Profile") {
+      Router.push("/profile");
+      setModel((prev) => !prev);
+    }
     setModel((prev) => !prev);
   }
 
@@ -54,7 +62,11 @@ export default function DesktopHeader() {
             alt="Search Icon"
             style={{ filter: " brightness() invert(0.5)" }}
           />
-          <input type="text" placeholder="Search" />
+          <input
+            type="text"
+            placeholder="Search"
+            onClick={() => Router.push("/searchpage")}
+          />
         </div>
       </div>
       <div className={styles.ActionsBox}>
@@ -70,11 +82,17 @@ export default function DesktopHeader() {
 
         {isModel && (
           <div className={styles.Model}>
-            <button className={styles.ProfileBTN} onClick={handleModel}>
+            <button
+              className={styles.ProfileBTN}
+              onClick={() => handleModel("Profile")}
+            >
               <Image src={profileoutline} width={30} height={30} alt="Icon" />
               <span>Profile</span>
             </button>
-            <button className={styles.ProfileBTN} onClick={handleModel}>
+            <button
+              className={styles.ProfileBTN}
+              onClick={() => handleModel("OUT")}
+            >
               <Image src={Logout} width={30} height={30} alt="Icon" />
               <span>Sign Out</span>
             </button>

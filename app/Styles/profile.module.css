@@ -6,6 +6,7 @@
   min-height: 100vh;
   background-color: #fff;
   padding: 20px;
+  justify-content: center;
 }
 
 /* Profile card styling */

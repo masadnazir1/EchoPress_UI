@@ -3,6 +3,7 @@ import "./globals.css";
 import BottomTabsWrapper from "./components/BottomTabsWrapper";
 import GoogleProviderWrapper from "./components/GoogleProviderWrapper";
 import Script from "next/script";
+import DesktopHeader from "./components/DesktopHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,12 +45,11 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        {/* <MobileOnlyWrapper> */}
         <GoogleProviderWrapper>
+          {/* <DesktopHeader /> */}
           {children}
           <BottomTabsWrapper />
         </GoogleProviderWrapper>
-        {/* </MobileOnlyWrapper> */}
       </body>
     </html>
   );
